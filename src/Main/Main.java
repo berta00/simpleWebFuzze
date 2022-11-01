@@ -5,8 +5,6 @@ import WebDirCrowler.WebDirCrowler;
 class Main {
     public static String banner  = "\n                __          ____                         \n _      _____  / /_        / __/_  __________  ___  _____\n| | /| / / _ \\/ __ \\______/ /_/ / / /_  /_  / / _ \\/ ___/\n| |/ |/ /  __/ /_/ /_____/ __/ /_/ / / /_/ /_/  __/ /    \n|__/|__/\\___/_.___/     /_/  \\__,_/ /___/___/\\___/_/     \n\n";
 
-    public static String dirList = "./../../defaultList/dirList.txt";
-
     /*
         Usage:
             simpleWebFuze <target> <options>

@@ -7,7 +7,7 @@ import java.util.*;
 public class WebDirCrowler {
     // attributes
     public String url;
-    public String dirListPath = "/Users/marcobertagnolli/Desktop/programmazione/simpleWebFuzze/defaultList/dirList.txt";
+    public String dirListPath = "/Users/marcobertagnolli/Desktop/Programmazione/simpleWebFuzze/defaultList/dirList.txt";
     public int    timeOut;
     public int    timeStop;
 
