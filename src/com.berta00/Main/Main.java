@@ -18,16 +18,17 @@ class Main {
         System.out.print(banner);
 
         // parse the args
-        for(int element = 0; element < args.length; element++){
+        for(int element = 1; element < args.length; element++){
             if(args[element].charAt(0) == '-'){
                 // it is a flag
                 switch (args[element]){
                     // dir fuze
                     case "--dir":
                         if(args[element + 1].charAt(0) != '-'){
-                            System.out.println("aaa");
+                            // dir list not specified the file
+
                         } else {
-                            System.out.println("aaa");
+                            // dir list specified the file
                         }
                         break;
                     case "--dos":
