@@ -1,4 +1,4 @@
-package WebDirCrowler;
+package com.berta00;
 
 import java.net.*;
 import java.io.*;
@@ -38,16 +38,19 @@ public class WebDirCrowler {
             reqTimeDeltas[reqNum] = finishTime - startTime;
 
             if(reqReturnCode <= 600){
-                // normal HTTP status code
-                System.out.println("n: " + (reqNum + 1) + ", dir: " + parsedList[reqNum] + ", code: " + reqReturnCode);
+                if(reqReturnCode == 200){
+                    System.out.println("request to " + currentRoute + " done: " + reqReturnCode);
+                }
                 // increment for index
                 reqNum++;
                 // summ all req time deltas
                 reqTimeDeltaEverage += reqTimeDeltas[(reqNum - 1)];
             } else {
                 // connection or request exception code
-                System.out.println("Get request n." + reqNum + " can't be done code: " + reqReturnCode);
+                System.out.println("Get request n." + reqNum + " can't be done code: " + reqReturnCode + "\n");
             }
+
+            System.out.print("Request done " + reqNum + "/" + (requestN + 1) + " - current: " + currentRoute + "\r");
         }
         // calc the everage time
         reqTimeDeltaEverage = reqTimeDeltaEverage / requestN;

@@ -1,6 +1,6 @@
-package Main;
+package com.berta00;
 
-import WebDirCrowler.WebDirCrowler;
+import com.berta00.WebDirCrowler;
 
 class Main {
     public static String banner  = "\n                __          ____                         \n _      _____  / /_        / __/_  __________  ___  _____\n| | /| / / _ \\/ __ \\______/ /_/ / / /_  /_  / / _ \\/ ___/\n| |/ |/ /  __/ /_/ /_____/ __/ /_/ / / /_/ /_/  __/ /    \n|__/|__/\\___/_.___/     /_/  \\__,_/ /___/___/\\___/_/     \n\n";
@@ -9,8 +9,8 @@ class Main {
         Usage:
             simpleWebFuze <target> <options>
         Options:
-            -d <optionaly dir list>: start web direcotry fuzzing
-            -
+            --dir <optionaly dir list>: start web direcotry fuzzing
+            --dos
      */
     public static void main(String[] args){
         String banner = "\n                __          ____                         \n _      _____  / /_        / __/_  __________  ___  _____\n| | /| / / _ \\/ __ \\______/ /_/ / / /_  /_  / / _ \\/ ___/\n| |/ |/ /  __/ /_/ /_____/ __/ /_/ / / /_/ /_/  __/ /    \n|__/|__/\\___/_.___/     /_/  \\__,_/ /___/___/\\___/_/     \n\n";
@@ -23,26 +23,39 @@ class Main {
                 // it is a flag
                 switch (args[element]){
                     // dir fuze
-                    case "-f":
+                    case "--dir":
                         if(args[element + 1].charAt(0) != '-'){
                             System.out.println("aaa");
                         } else {
                             System.out.println("aaa");
                         }
+                        break;
+                    case "--dos":
+                        if(args[element + 1].charAt(0) != '-'){
+                            System.out.println("aaa");
+                        } else {
+                            System.out.println("aaa");
+                        }
+                        break;
                 }
             }
         }
 
         WebDirCrowler req = new WebDirCrowler();
-        req.url = "http://localhost:8080";
-        req.startDirScrapping("s");
+        req.url = "https://it.wikipedia.org/";
+
+        String timeFormat = "s";
+
+        double requestFreq = req.startDirScrapping(timeFormat);
+        System.out.println("Request everage time: " + requestFreq + " " + timeFormat);
 
         // if no flag
-        defaultStartup("www.example.org");
+        //defaultStartup("www.example.org");
 
     }
     private static void defaultStartup(String testUrl){
         // make a test request
+
         WebDirCrowler testReq = new WebDirCrowler();
         testReq.url = "https://www.google.it/";
 
